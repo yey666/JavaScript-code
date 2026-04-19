@@ -1,0 +1,1 @@
+alert('js,练习ing')
