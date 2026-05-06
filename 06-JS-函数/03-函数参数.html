@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  
+    // // 封装一个函数，计算1-100之间的和
+    // function getNum(end) {
+    //   console.log(end)
+    //   let sum = 0
+    //   for(let i = 1;i <= end;i++){
+    //     sum += i
+    //   }
+    //   document.write(sum)
+    // }
+    // getNum(50)
+    // getNum(100)
+    function getNum(start = 0,end = 0) {
+      // console.log(end)
+      let sum = 0
+      for(let i = start;i <= end;i++){
+        sum += i
+      }
+      document.write(sum)
+    }
+    // getNum(50)
+    // getNum(100)
+    getNum(1,50)
+    getNum()
+  </script>
+</body>
+</html>
