@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      height: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">123</div>
+  <div class="box">abc</div>
+  <p id="nav">导航栏</p>
+  <ul class = "nav">
+    <li>测试1</li>
+    <li>测试2</li>
+    <li>测试3</li>
+  </ul>
+  <script>
+    //1.获取匹配的第一个元素
+    // const box = document.querySelector('div')
+    // const box = document.querySelector('.box')
+    // console.dir(box)
+
+    // const nav = document.querySelector('#nav')//
+    // nav.style.color = 'red' //获取一个DOM元素可以直接修改；获取多个不行，获取多个DOM元素过来是伪数组
+    // console.dir(nav)
+
+    //获取第一个ulli
+    // const li = document.querySelector('ul li:first-child')
+    // console.dir(li)
+
+    //获取所有li
+    // const lis = document.querySelectorAll('ul li') ul li这样写法是后代选择器 找到ul里面的所有li
+    // console.dir(lis)
+    
+    //获取nav里面li元素 改变所有li的颜色
+    //1.获取元素
+    const lis = document.querySelectorAll('.nav li') //.nav li 是类+后代 找到class = "nav"元素里面的所有li
+    // console.log(lis)
+    for(let i = 0;i < lis.length;i++){
+      console.log(lis[i])
+      
+    }
+    //伪数组和获取过来的元素无关，和获取方式有关哪怕只有一个元素也是伪数组 伪数组没有push那些方法
+    const p = document.querySelectorAll('#nav') //#nav是ID选择器，找到id = nav的那个元素
+    // console.log(p)
+    p[0].style.color = 'blue'
+    
+  </script>
+</body>
+</html>

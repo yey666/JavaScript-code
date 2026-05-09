@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 不推荐用for in 遍历数组
+    // let arr = ['pink','blue','red']
+    // for(let k in arr) {
+    //   console.log(k) //k是数组的下标 索引号 但是是字符串类型
+    //   console.log(arr[k])
+    // }
+
+    // 1.遍历对象用 for in
+    let obj = {
+      uname: 'kkk',
+      age: '18',
+      gender: '女'
+    }
+    // 2.遍历对象
+    // 获得对象属性是k；获得对象值是obj[k]
+    for(let k in obj) {
+      console.log(k) //属性名 'uname' 'age' 'gender' 字符串类型
+      console.log(obj[k])//输出属性值 obj[k]
+      
+      
+    }
+  </script>
+</body>
+</html>
