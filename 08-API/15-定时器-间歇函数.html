@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // setInterval(函数名，间隔时间)
+    // 每隔一秒钟打印一句话 不需要手动刷新
+    // setInterval(function(){
+    //   console.log('一秒钟执行一次')
+      
+    // },1000)
+    function fn() {
+      console.log('一秒钟执行一次')
+    }
+    let n = setInterval(fn,1000)//fn不能加小括号,加小括号的意思是调用函数,直接调用就只有一句话输出了
+    console.log(n)
+    // 关闭
+    clearInterval(n)
+    // let m = setInterval(function() {
+    //   console.log(11)
+      
+    // },2000)
+    // console.log(m)
+    let i = 1
+    setInterval(function(){
+      i++
+      document.write(i)
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 表单在很多情况需要修改属性，比如输入密码时的眼睛，一点一闭就可以看到密码，
+  本质是把表单类型转换为 文本框
+  获取：DOM对象.属性名
+  设置：DOM对象.属性名 = 新值 -->
+  <!-- <input type="text" value="电脑"> -->
+   <input type="checkbox" name="" id="" checked>
+   <!-- disabled 是禁用的意思 -->
+   <button>点击</button>  
+
+  <script>
+    // 1.获取元素
+    // const uname = document.querySelector('input')
+    //2.获取用户输入的值 获取表单里面的值  用的 是 表单.value
+    // console.log(uname.value)
+    // 3.更新文本框的值
+    // uname.value = '我要找工作'
+    
+    // uname.type = 'password'
+
+    // 获取用户在表单输入的值
+    // 1.获取
+    const ipt = document.querySelector('input')
+    console.log(ipt.checked)
+    // ipt.checked = 'true' //能转换，不提倡
+    ipt.checked = true
+
+    // 1.获取
+    const button = document.querySelector('button')
+    console.log(button.disabled) //默认是false  不禁用
+    button.disabled = true
+  </script>
+</body>
+</html>
