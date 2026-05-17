@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <!-- 事件类型：
+  1.鼠标触发 :click鼠标点击 mouseenter 鼠标经过 mouseleave 鼠标离开
+  2.表单获得光标 ： focus获得焦点 blur 失去焦点
+  3.键盘触发： keydown键盘按下触发  keyup 键盘抬起触发
+  4.表单输入触发：input 用户输入事件 -->
+  <div></div>
+  <script>
+    const div = document.querySelector('div')
+    // 鼠标经过
+    div.addEventListener('mouseenter',function(){
+      console.log('鼠标经过了div')
+    })
+    // 鼠标离开
+    div.addEventListener('mouseleave',function(){
+      console.log('鼠标离开了div')
+    })
+  </script>
+</body>
+</html>

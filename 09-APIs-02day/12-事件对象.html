@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <button>点击</button> -->
+   <input type="text">
+  <script>
+    // const btn = document.querySelector('button')
+    // btn.addEventListener('click',function(e){
+    //   console.log(e)
+    // })
+    const input = document.querySelector('input')
+    input.addEventListener('keyup',function(e){
+      // keyup是无论键盘输入什么都会触发，现在我要求：只有按下回车键才能触发
+      console.log(e.key)
+      if(e.key === 'Enter') {
+        console.log('我按下了回车键')
+        
+      }
+    })
+  </script>
+</body>
+</html>
