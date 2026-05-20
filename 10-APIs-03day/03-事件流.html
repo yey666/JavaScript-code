@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .mother {
+      width: 500px;
+      height: 500px;
+      background-color: silver;
+    }
+    .girl {
+      width: 200px;
+      height: 200px;
+      background-color: seashell;
+    }
+  </style>
+</head>
+<body>
+  <div class="mother">
+    <div class="girl"></div>
+  </div>
+  
+  <script>
+    const mo = document.querySelector('.mother')
+    const girl = document.querySelector('.girl')
+    document.addEventListener('click',function() {
+      alert('我是姥姥')
+    })
+    mo.addEventListener('click',function() {
+      alert('我是妈妈')
+    })
+    girl.addEventListener('click',function(e) {
+      alert('我是女儿')
+      // 阻止流动传播  事件对象.stopPropagation()
+      e.stopPropagation()
+    })
+  </script>
+</body>
+</html>

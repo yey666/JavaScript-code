@@ -74,11 +74,11 @@
     <div class="tab-nav">
       <h3>每日特价</h3>
       <ul>
-        <li><a class="active" href="javascript:;">精选</a></li>
-        <li><a href="javascript:;">美食</a></li>
-        <li><a href="javascript:;">百货</a></li>
-        <li><a href="javascript:;">个护</a></li>
-        <li><a href="javascript:;">预告</a></li>
+        <li><a class="active" href="javascript:;" data-id="0">精选</a></li>
+        <li><a href="javascript:;"data-id="1">美食</a></li>
+        <li><a href="javascript:;"data-id="2">百货</a></li>
+        <li><a href="javascript:;"data-id="3">个护</a></li>
+        <li><a href="javascript:;"data-id="4">预告</a></li>
       </ul>
     </div>
     <div class="tab-content">
@@ -91,27 +91,37 @@
   </div>
 
   <script>
-    //a模块制作  鼠标经过哪个a链接，界面就停留在哪个a链接 --给5个a链接绑定鼠标经过事件
-    // 1.1获取a元素
-    const as = document.querySelectorAll('.tab-nav a')
-    // console.log(as)
-    // 1.2一次性给所有a链接绑定鼠标经过事件
-    for(let i = 0;i < as.length; i++) {
-      as[i].addEventListener('mouseenter',function() {
-        // console.log('鼠标经过')
+    // 采取事件委托的形式 进行tab栏切换
+    // 1.获取父元素 ul 
+    const ul = document.querySelector('.tab-nav ul')
+    // 2.添加事件
+    ul.addEventListener('click',function(e){
+      // console.log(e.target)  //e.target 是我们点击的对象
+      // 我们只有点击了 a  才会 进行 添加类和删除类操作
+      // console.log(e.target.tagName)  //是标签名 是大写A
+
+      if(e.target.tagName === 'A') {
+        // console.log('我选的是a')
+        //排他思想，先移除 tab-nav里面的active 
+        document.querySelector('.tab-nav .active').classList.remove('active')  //active 为什么不需要加点
+        // 当前元素添加active  是e.target
+        // this 指向ul不能用this
+        e.target.classList.add('active')
         
-        // 1.3鼠标经过哪个a链接，就给哪个a链接加上高亮 排他思想
-        // 移除类active
-        document.querySelector('.tab-nav .active').classList.remove('active')
-        // 添加类active
-        this.classList.add('active')
-
-        // 2.a链接对应的大盒子界面 item
+        // 下面大盒子模块  加一个自定义属性来选中li对应的大盒子
+        // console.log(e.target.dataset.id)
+        const i = +e.target.dataset.id  //bug 取过来是字符串，要转为数字型
+        //排他思想，先移除 tab-content里面的active 
         document.querySelector('.tab-content .active').classList.remove('active')
-        document.querySelector(`.tab-content .item:nth-child(${i + 1})`).classList.add('active')
-      })
-    }
+        // 对应大盒子 添加active 
+        // 写法1： document.querySelector(`.tab-content .item:nth-child(${i + 1})`).classList.add('active')
+        // 写法2:
+        // 先获取所有的item
+        const items = document.querySelectorAll('.tab-content .item')
+        items[i].classList.add('active')
 
+      }
+    })
   </script>
 </body>
 
