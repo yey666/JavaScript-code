@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 方法在对象里 在日期对象里
+    const date = new Date()
+    // 使用里面的方法
+    console.log(date.getFullYear())
+    console.log(date.getMonth())  // 4 实则是5月 这个方法取值为0~11
+    console.log(date.getMonth() + 1) // 5  记得要+1
+    console.log(date.getDate())  // 日期：26号
+    console.log(date.getDay())   // 返回的是星期几 星期日是0  取值为0~6
+    console.log(date.getHours())
+    console.log(date.getMinutes())
+    console.log(date.getSeconds())
+    
+    
+
+  </script>
+</body>
+</html>
